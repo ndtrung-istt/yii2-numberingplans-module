@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var vendor\istt\numberingplans\models\MobileCountryCode $model
+ * @var istt\np\models\MobileCountryCode $model
  */
 
 $this->title = Yii::t('np', 'Create {modelClass}', [

@@ -5,7 +5,7 @@ use kartik\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var vendor\istt\numberingplans\models\NetworkOperator $model
+ * @var istt\np\models\NetworkOperator $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>

@@ -1,10 +1,10 @@
 <?php
 
-namespace vendor\istt\numberingplans\controllers;
+namespace istt\np\controllers;
 
 use Yii;
-use vendor\istt\numberingplans\models\CountryCode;
-use vendor\istt\numberingplans\models\CountryCodeSearch;
+use istt\np\models\CountryCode;
+use istt\np\models\CountryCodeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

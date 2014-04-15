@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var vendor\istt\numberingplans\models\MobileCountryCodeSearch $model
+ * @var istt\np\models\MobileCountryCodeSearch $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>

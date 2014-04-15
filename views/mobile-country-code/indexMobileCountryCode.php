@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var vendor\istt\numberingplans\models\MobileCountryCodeSearch $searchModel
+ * @var istt\np\models\MobileCountryCodeSearch $searchModel
  */
 
 $this->title = Yii::t('np', 'Mobile Country Codes');

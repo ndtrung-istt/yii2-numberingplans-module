@@ -1,14 +1,14 @@
 <?php
 
-namespace vendor\istt\numberingplans\models;
+namespace istt\np\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use vendor\istt\numberingplans\models\NetworkCode;
+use istt\np\models\NetworkCode;
 
 /**
- * NetworkCodeSearch represents the model behind the search form about `vendor\istt\numberingplans\models\NetworkCode`.
+ * NetworkCodeSearch represents the model behind the search form about `istt\np\models\NetworkCode`.
  */
 class NetworkCodeSearch extends Model
 {

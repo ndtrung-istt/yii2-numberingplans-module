@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 
 /**
  * @var yii\web\View $this
- * @var vendor\istt\numberingplans\models\NetworkCode $model
+ * @var istt\np\models\NetworkCode $model
  */
 
 $this->title = $model->operator_id;

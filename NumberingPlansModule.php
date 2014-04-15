@@ -1,10 +1,10 @@
 <?php
 
-namespace vendor\istt\numberingplans;
+namespace istt\np;
 
 class NumberingPlansModule extends \yii\base\Module
 {
-    public $controllerNamespace = 'vendor\istt\numberingplans\controllers';
+    public $controllerNamespace = 'istt\np\controllers';
 
     public function init()
     {

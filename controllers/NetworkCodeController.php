@@ -1,10 +1,10 @@
 <?php
 
-namespace vendor\istt\numberingplans\controllers;
+namespace istt\np\controllers;
 
 use Yii;
-use vendor\istt\numberingplans\models\NetworkCode;
-use vendor\istt\numberingplans\models\NetworkCodeSearch;
+use istt\np\models\NetworkCode;
+use istt\np\models\NetworkCodeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

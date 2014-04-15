@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 
 /**
  * @var yii\web\View $this
- * @var vendor\istt\numberingplans\models\Country $model
+ * @var istt\np\models\Country $model
  */
 
 $this->title = $model->country_id;

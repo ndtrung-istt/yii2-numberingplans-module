@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\istt\numberingplans\models;
+namespace istt\np\models;
 
 use Yii;
 
