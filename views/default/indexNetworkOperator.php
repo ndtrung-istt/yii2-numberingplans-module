@@ -6,13 +6,13 @@ use yii\grid\GridView;
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var vendor\istt\numberingplans\models\NetworkCodeSearch $searchModel
+ * @var vendor\istt\numberingplans\models\NetworkOperatorSearch $searchModel
  */
 
-$this->title = Yii::t('np', 'Network Codes');
+$this->title = Yii::t('np', 'Network Operators');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="network-code-index">
+<div class="network-operator-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a(Yii::t('np', 'Create {modelClass}', [
-  'modelClass' => 'Network Code',
+  'modelClass' => 'Network Operator',
 ]), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
@@ -30,8 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'operator',
+            'operator_id',
+            'operator_name',
+            'operator_name_short',
+            'country',
             'mnc',
+            'ndc',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

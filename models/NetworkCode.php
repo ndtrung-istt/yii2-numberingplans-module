@@ -60,6 +60,10 @@ class NetworkCode extends \yii\db\ActiveRecord
      */
     public function getOperator()
     {
-        return $this->hasOne(Operators::className(), ['operator_id' => 'operator_id']);
+        return $this->hasOne(NetworkOperator::className(), ['operator_id' => 'operator_id']);
+    }
+
+    public function __toString(){
+    	return $this->mnc;
     }
 }

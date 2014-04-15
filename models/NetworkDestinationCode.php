@@ -51,7 +51,7 @@ class NetworkDestinationCode extends \yii\db\ActiveRecord
     {
         return [
             'operator_id' => Yii::t('np', 'Operator ID'),
-            'ndc' => Yii::t('np', 'Ndc'),
+            'ndc' => Yii::t('np', 'National Destination Code'),
         ];
     }
 
@@ -60,6 +60,10 @@ class NetworkDestinationCode extends \yii\db\ActiveRecord
      */
     public function getOperator()
     {
-        return $this->hasOne(Operators::className(), ['operator_id' => 'operator_id']);
+        return $this->hasOne(NetworkOperator::className(), ['operator_id' => 'operator_id']);
+    }
+
+    public function __toString(){
+    	return $this->ndc;
     }
 }

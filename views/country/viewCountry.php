@@ -33,6 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'country_id',
             'country_name',
             'country_name_short',
+            'cc',
+            'mcc',
+            'operators',
         ],
     ]) ?>
 

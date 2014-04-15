@@ -14,12 +14,13 @@ class NetworkCodeSearch extends Model
 {
     public $operator_id;
     public $mnc;
+    public $operator;
 
     public function rules()
     {
         return [
             [['operator_id'], 'integer'],
-            [['mnc'], 'safe'],
+            [['mnc', 'operator'], 'safe'],
         ];
     }
 
@@ -30,13 +31,14 @@ class NetworkCodeSearch extends Model
     {
         return [
             'operator_id' => Yii::t('np', 'Operator ID'),
+            'operator' => Yii::t('np', 'Network Operator'),
             'mnc' => Yii::t('np', 'Mnc'),
         ];
     }
 
     public function search($params)
     {
-        $query = NetworkCode::find();
+        $query = NetworkCode::find()->with('operator');
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -50,6 +52,7 @@ class NetworkCodeSearch extends Model
         ]);
 
         $query->andFilterWhere(['like', 'mnc', $this->mnc]);
+        //$query->andFilterWhere(['like', 'operator_name', $this->operator]);
 
         return $dataProvider;
     }

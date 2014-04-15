@@ -51,7 +51,7 @@ class CountryCode extends \yii\db\ActiveRecord
     {
         return [
             'country_id' => Yii::t('np', 'Country ID'),
-            'cc' => Yii::t('np', 'Cc'),
+            'cc' => Yii::t('np', 'Country Code'),
         ];
     }
 
@@ -61,5 +61,9 @@ class CountryCode extends \yii\db\ActiveRecord
     public function getCountry()
     {
         return $this->hasOne(Countries::className(), ['country_id' => 'country_id']);
+    }
+
+    public function __toString(){
+    	return $this->cc;
     }
 }

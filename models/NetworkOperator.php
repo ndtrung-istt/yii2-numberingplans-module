@@ -67,17 +67,17 @@ class NetworkOperator extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getOperatorMnc()
+    public function getMnc()
     {
-        return $this->hasOne(OperatorMnc::className(), ['operator_id' => 'operator_id']);
+        return $this->hasOne(NetworkCode::className(), ['operator_id' => 'operator_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getOperatorNdc()
+    public function getNdc()
     {
-        return $this->hasOne(OperatorNdc::className(), ['operator_id' => 'operator_id']);
+        return $this->hasOne(NetworkDestinationCode::className(), ['operator_id' => 'operator_id']);
     }
 
     /**
@@ -85,22 +85,10 @@ class NetworkOperator extends \yii\db\ActiveRecord
      */
     public function getCountry()
     {
-        return $this->hasOne(Countries::className(), ['country_id' => 'country_id']);
+        return $this->hasOne(Country::className(), ['country_id' => 'country_id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getOperatorsInList()
-    {
-        return $this->hasOne(OperatorsInList::className(), ['operator_id' => 'operator_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getOperatorLists()
-    {
-        return $this->hasMany(OperatorsLists::className(), ['operator_list_id' => 'operator_list_id'])->viaTable('oc_cfg_operators_in_list', ['operator_id' => 'operator_id']);
+    public function __toString(){
+    	return $this->operator_name . ' - ' . $this->operator_name_short;
     }
 }

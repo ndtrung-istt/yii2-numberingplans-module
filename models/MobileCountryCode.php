@@ -52,7 +52,7 @@ class MobileCountryCode extends \yii\db\ActiveRecord
     {
         return [
             'country_id' => Yii::t('np', 'Country ID'),
-            'mcc' => Yii::t('np', 'Mcc'),
+            'mcc' => Yii::t('np', 'Mobile Country Code'),
         ];
     }
 
@@ -61,6 +61,10 @@ class MobileCountryCode extends \yii\db\ActiveRecord
      */
     public function getCountry()
     {
-        return $this->hasOne(Countries::className(), ['country_id' => 'country_id']);
+        return $this->hasOne(Country::className(), ['country_id' => 'country_id']);
+    }
+
+    public function __toString(){
+    	return $this->mcc;
     }
 }

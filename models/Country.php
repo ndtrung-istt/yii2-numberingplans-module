@@ -59,39 +59,31 @@ class Country extends \yii\db\ActiveRecord
             'country_id' => Yii::t('np', 'Country ID'),
             'country_name' => Yii::t('np', 'Country Name'),
             'country_name_short' => Yii::t('np', 'Country Name Short'),
+            'cc' => Yii::t('np', 'Country Code'),
+			'mcc' => Yii::t('np', 'Mobile Country Code'),
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCountriesInList()
-    {
-        return $this->hasOne(CountriesInList::className(), ['country_id' => 'country_id']);
+    public function attributeLabel($attr){
+    	if ($label = parent::attributeLabel($attr) == ucfirst($attr)){
+    		return Yii::t('np', $attr);
+    	}
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCountryLists()
+    public function getCc()
     {
-        return $this->hasMany(CountriesList::className(), ['country_list_id' => 'country_list_id'])->viaTable('oc_cfg_countries_in_list', ['country_id' => 'country_id']);
+        return $this->hasOne(CountryCode::className(), ['country_id' => 'country_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCountryCc()
+    public function getMcc()
     {
-        return $this->hasOne(CountryCc::className(), ['country_id' => 'country_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCountryMcc()
-    {
-        return $this->hasOne(CountryMcc::className(), ['country_id' => 'country_id']);
+        return $this->hasOne(MobileCountryCode::className(), ['country_id' => 'country_id']);
     }
 
     /**
@@ -99,6 +91,10 @@ class Country extends \yii\db\ActiveRecord
      */
     public function getOperators()
     {
-        return $this->hasMany(Operators::className(), ['country_id' => 'country_id']);
+        return $this->hasMany(NetworkOperator::className(), ['country_id' => 'country_id']);
+    }
+
+    public function __toString(){
+    	return $this->country_name . ' - ' . $this->country_name_short;
     }
 }
